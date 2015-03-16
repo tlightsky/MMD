@@ -52,3 +52,26 @@
       [α x y
        (mcos a b)]))))
 
+
+
+
+(def w4bq1 (matrix [(/ 2 7) (/ 3 7) (/ 6 7)]))
+
+(def w4bq1a (matrix [[0.728, 0.485, -0.485]
+                     [0.312, 0.156, -0.937]
+                     [2.250, -0.500, -0.750]
+                     [0.975, 0.700, -0.675]]))
+
+(for [x w4bq1a]
+  [(mmult x w4bq1)
+   (vector-length x)]
+  )
+
+
+(def w4bq3 (matrix [[1 1] [2 2] [3 4]]))
+
+(def MTM (mmult (trans w4bq3) w4bq3))
+MTM
+(def w4bq3v (:vectors (decomp-eigenvalue MTM)))
+
+(mmult w4bq3 w4bq3v)

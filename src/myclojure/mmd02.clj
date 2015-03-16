@@ -16,7 +16,7 @@
    :else
    (min
      (+
-      (if (= (first seq1) (first seq2)) 0 2)
+      (if (= (first seq1) (first seq2)) 0 2) ;; if dp find equal 0 else 2
       (#'med (rest seq1) (rest seq2)))
      (inc (#'med (rest seq1) seq2))
      (inc (#'med seq1 (rest seq2))))))
